@@ -1,0 +1,17 @@
+*,
+* ::after,
+* ::before {
+    margin: 0;
+    padding: 0;
+}
+
+.Footer {
+    background-color: rgb(54, 54, 54);
+    padding: 1rem 1.5rem;
+    font-size: 0.5rem;
+    color: white;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}

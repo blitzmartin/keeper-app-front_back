@@ -1,0 +1,59 @@
+.Note {
+    background: #fff;
+    border-radius: 7px;
+    box-shadow: 0 2px 5px #ccc;
+    padding: 10px;
+    width: 240px;
+    margin: 16px;
+    float: left;
+}
+
+.Note h3 {
+    font-size: 1.1em;
+    margin-bottom: 6px;
+}
+
+.Note p {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.Note button {
+    font-size: 1.1em;
+    border-radius: 5px;
+    background-color: #EEC212;
+}
+
+.Note button:hover {
+    background-color: #1e1e1e;
+    color:#EEC212;
+}
+
+.newNoteDiv {
+    width: 300px;
+    margin: 0 auto;
+    background-color: inherit;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid whitesmoke;
+    border-radius: 10px;
+    box-shadow: 2px 5px 10px #888888;
+}
+
+.newNoteDiv input,
+textarea,
+button {
+    font-size: 1.3rem;
+    border: none;
+    padding: 1rem;
+}
+
+.newNoteDiv button {
+    border-radius: 10px;
+}
+
+.newNoteDiv button:hover {
+    background-color: #EEC212;
+}
