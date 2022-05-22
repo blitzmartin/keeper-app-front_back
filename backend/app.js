@@ -2,7 +2,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
-const cors = require('cors');
+const cors = require('cors');  // cors module is to avoid restrictions between front and back
 
 // Connect to MongoDB server on port 27017 and database
 dotenv.config();
