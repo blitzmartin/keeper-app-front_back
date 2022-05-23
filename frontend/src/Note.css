@@ -37,7 +37,7 @@
     background-color: inherit;
     display: flex;
     flex-direction: column;
-    border: 1px solid whitesmoke;
+    border: 1px solid inherit;
     border-radius: 10px;
     box-shadow: 2px 5px 10px #888888;
 }
@@ -50,8 +50,12 @@ button {
     padding: 1rem;
 }
 
-.newNoteDiv button {
-    border-radius: 10px;
+.newNoteDiv input {
+    border-radius: 0 0 10px 10px;
+}
+
+.newNoteDiv input {
+    border-radius: 10px 10px 0 0;
 }
 
 .newNoteDiv button:hover {
