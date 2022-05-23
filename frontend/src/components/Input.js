@@ -25,31 +25,32 @@ export default function Input() {
                 content: content,
             })
         };
-        if (title !== "" && content !== ""){
+        if (title !== "" && content !== "") {
             fetch("/home/newnote", requestOptions)
-            .then(res => {
-                if (res.status === 200) {
-                    setTitle(title)
-                    setContent(content)
-                    navigate('/', { replace: true });
-                }
-                setTitle("");
-                setContent("");
-            })
+                .then(res => {
+                    if (res.status === 200) {
+                        setTitle(title)
+                        setContent(content)
+                        navigate('/', { replace: true });
+                    }
+                    setTitle("");
+                    setContent("");
+                })
         }
     }
 
     return (
         <div className='newNoteDiv'>
             <form>
+                <input  onClick={expand} placeholder={isExpanded ? 'Note title' : 'New note'} onChange={(e) => setTitle(e.target.value)} value={title} required />
                 {isExpanded &&
-                    <input placeholder='New Title' onChange={(e) => setTitle(e.target.value)} value={title} required />
-                }
-                <textarea onClick={expand} rows={isExpanded ? 3 : 1} placeholder={isExpanded ? 'Note content' : 'New note'} onChange={(e) => setContent(e.target.value)} value={content} required />
-                {isExpanded &&
-                   <Zoom in={isExpanded}>
-                        <Fab onClick={handleClick}><AddIcon /></Fab>
-                   </Zoom> 
+                    <>
+                        <textarea rows={isExpanded ? 3 : 1} placeholder='New content' onChange={(e) => setContent(e.target.value)} value={content} required />
+
+                        <Zoom in={isExpanded}>
+                            <Fab onClick={handleClick}><AddIcon /></Fab>
+                        </Zoom>
+                    </>
                 }
             </form>
         </div>
