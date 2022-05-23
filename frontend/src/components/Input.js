@@ -14,6 +14,7 @@ export default function Input() {
     }
 
     function handleClick() {
+
         const requestOptions = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -23,7 +24,8 @@ export default function Input() {
                 content: content,
             })
         };
-        fetch("/home/newnote", requestOptions)
+        if (title !== "" && content !== ""){
+            fetch("/home/newnote", requestOptions)
             .then(res => {
                 if (res.status === 200) {
                     setTitle(title)
@@ -33,18 +35,20 @@ export default function Input() {
                 setTitle("");
                 setContent("");
             })
+        }
     }
 
     return (
         <div className='newNoteDiv'>
-            {isExpanded &&
-                <input placeholder='New Title' onChange={(e) => setTitle(e.target.value)} value={title} required />
-            }
-            <textarea onClick={expand} rows={isExpanded ? 3 : 1} placeholder={isExpanded ? 'Note content' : 'New note'} onChange={(e) => setContent(e.target.value)} value={content} required />
-            {isExpanded &&
-                <button onClick={handleClick}><AddIcon /></button>
-            }
-
+            <form>
+                {isExpanded &&
+                    <input placeholder='New Title' onChange={(e) => setTitle(e.target.value)} value={title} required />
+                }
+                <textarea onClick={expand} rows={isExpanded ? 3 : 1} placeholder={isExpanded ? 'Note content' : 'New note'} onChange={(e) => setContent(e.target.value)} value={content} required />
+                {isExpanded &&
+                    <button onClick={handleClick}><AddIcon /></button>
+                }
+            </form>
         </div>
     )
 }
