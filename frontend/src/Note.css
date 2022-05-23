@@ -21,33 +21,36 @@
 }
 
 .Note button {
-    font-size: 1.1em;
-    border-radius: 5px;
-    background-color: #EEC212;
-}
-
-.Note button:hover {
-    background-color: #1e1e1e;
-    color:#EEC212;
+    position: relative;
+    float: right;
+    margin-right: 10px;
+    color: #f5ba13;
+    border: none;
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    outline: none;
 }
 
 .newNoteDiv {
-    width: 300px;
-    margin: 0 auto;
-    background-color: inherit;
-    display: flex;
-    flex-direction: column;
-    border: 1px solid inherit;
-    border-radius: 10px;
-    box-shadow: 2px 5px 10px #888888;
+    position: relative;
+    width: 480px;
+    margin: 30px auto 20px auto;
+    background: #fff;
+    padding: 15px;
+    border-radius: 7px;
+    box-shadow: 0 1px 5px rgb(138, 137, 137);
 }
 
 .newNoteDiv input,
-textarea,
-button {
-    font-size: 1.3rem;
+.newNoteDiv textarea {
+    width: 100%;
     border: none;
-    padding: 1rem;
+    padding: 4px;
+    outline: none;
+    font-size: 1.2em;
+    font-family: inherit;
+    resize: none;
 }
 
 .newNoteDiv input {
@@ -55,9 +58,16 @@ button {
 }
 
 .newNoteDiv button {
-    border-radius: 0 0 10px 10px;    
-}
-
-.newNoteDiv button:hover {
-    background-color: #EEC212;
+    position: absolute;
+    right: 18px;
+    bottom: -18px;
+    background: #f5ba13;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    outline: none;
 }

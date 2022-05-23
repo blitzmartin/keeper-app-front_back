@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { GrAdd } from 'react-icons/gr'
 
 export default function Input() {
 
@@ -33,7 +34,7 @@ export default function Input() {
         <div className='newNoteDiv'>
             <input placeholder='New Title' onChange={(e) => setTitle(e.target.value)} value={title} required/>
             <textarea rows="4" placeholder='Note content' onChange={(e) => setContent(e.target.value)} value={content} required />
-            <button onClick={handleClick}>Add</button>
+            <button onClick={handleClick}><GrAdd /></button>
         </div>
     )
 }
