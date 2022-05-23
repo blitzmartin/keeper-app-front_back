@@ -24,13 +24,16 @@ export default function Notes() {
   getNotes();
 
   return (
-    <div className='noteGrid'>
-      {notes.map(note => (
-        <Note
-          key={note._id}
-          note={note}
-        />
-      ))}
-    </div>
+    <>
+      {notes.length === 0 && <h2 style={{textAlign: "center"}}>There are no notes yet!</h2>}
+      <div className='noteGrid'>
+        {notes.map(note => (
+          <Note
+            key={note._id}
+            note={note}
+          />
+        ))}
+      </div>
+    </>
   );
 }

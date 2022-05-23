@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import AddIcon from '@mui/icons-material/Add';
+import { Fab, Zoom } from '@mui/material';
 
 export default function Input() {
 
@@ -46,7 +47,9 @@ export default function Input() {
                 }
                 <textarea onClick={expand} rows={isExpanded ? 3 : 1} placeholder={isExpanded ? 'Note content' : 'New note'} onChange={(e) => setContent(e.target.value)} value={content} required />
                 {isExpanded &&
-                    <button onClick={handleClick}><AddIcon /></button>
+                   <Zoom in={isExpanded}>
+                        <Fab onClick={handleClick}><AddIcon /></Fab>
+                   </Zoom> 
                 }
             </form>
         </div>
