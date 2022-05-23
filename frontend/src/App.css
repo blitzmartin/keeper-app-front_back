@@ -8,11 +8,6 @@
   box-sizing: border-box;
 }
 
-.App {
-  text-align: left;
-  font-family: 'Montserrat', sans-serif;
-  background-color: #eee;
-}
 
 .noteGrid {
   display: grid;

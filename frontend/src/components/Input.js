@@ -1,12 +1,17 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { GrAdd } from 'react-icons/gr'
+import AddIcon from '@mui/icons-material/Add';
 
 export default function Input() {
 
     const [title, setTitle] = useState("");
     const [content, setContent] = useState("")
+    const [isExpanded, setExpanded] = useState(false)
     const navigate = useNavigate();
+
+    function expand() {
+        setExpanded(true);
+    }
 
     function handleClick() {
         const requestOptions = {
@@ -32,9 +37,14 @@ export default function Input() {
 
     return (
         <div className='newNoteDiv'>
-            <input placeholder='New Title' onChange={(e) => setTitle(e.target.value)} value={title} required/>
-            <textarea rows="4" placeholder='Note content' onChange={(e) => setContent(e.target.value)} value={content} required />
-            <button onClick={handleClick}><GrAdd /></button>
+            {isExpanded &&
+                <input placeholder='New Title' onChange={(e) => setTitle(e.target.value)} value={title} required />
+            }
+            <textarea onClick={expand} rows={isExpanded ? 3 : 1} placeholder={isExpanded ? 'Note content' : 'New note'} onChange={(e) => setContent(e.target.value)} value={content} required />
+            {isExpanded &&
+                <button onClick={handleClick}><AddIcon /></button>
+            }
+
         </div>
     )
 }

@@ -1,6 +1,6 @@
 import '../Note.css'
 import { useNavigate } from 'react-router-dom'
-import { RiDeleteBin6Fill } from 'react-icons/ri'
+import DeleteIcon from '@mui/icons-material/Delete';
 
 function Note({note}) {
 
@@ -26,7 +26,7 @@ function Note({note}) {
         <div className="Note">
             <h3>{note.title}</h3>
             <p>{note.content}</p>
-            <button onClick={handleClick}><RiDeleteBin6Fill /></button>
+            <button onClick={handleClick}><DeleteIcon /></button>
         </div>
     )
 }
