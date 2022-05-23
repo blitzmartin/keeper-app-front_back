@@ -51,11 +51,11 @@ button {
 }
 
 .newNoteDiv input {
-    border-radius: 0 0 10px 10px;
+    border-radius: 10px 10px 0 0;
 }
 
-.newNoteDiv input {
-    border-radius: 10px 10px 0 0;
+.newNoteDiv button {
+    border-radius: 0 0 10px 10px;    
 }
 
 .newNoteDiv button:hover {
