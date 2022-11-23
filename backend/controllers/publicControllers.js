@@ -10,7 +10,7 @@ async function showNotes(req, res) {
     catch (err) {
       console.log(err)
     }
-  };
+};
   
 
 // /home/newnote
